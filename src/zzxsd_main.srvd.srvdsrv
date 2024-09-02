@@ -1,0 +1,6 @@
+@EndUserText.label: 'main'
+define service ZZXSD_Main {
+  expose ZZXC_main_data_cds;
+  expose ZZXc_ITEM_DATA_CDS;
+  expose ZZXR_test_002_cds;
+}
