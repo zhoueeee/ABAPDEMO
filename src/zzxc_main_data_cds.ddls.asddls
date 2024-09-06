@@ -1,4 +1,5 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions:true
 @EndUserText.label: 'main'
 define root view entity ZZXC_main_data_cds 
 provider contract transactional_query   
