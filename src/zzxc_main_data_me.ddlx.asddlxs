@@ -5,28 +5,40 @@
                      title: { type: #STANDARD,
                               value: 'CostTypeId' } } }
 
-annotate entity ZZXC_main_data_cds
-    with 
+annotate entity ZZXC_main_data_cds with
 {
+
+  @UI.facet: [ { id:            'Main',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Main',
+                 position:      10 },
+                 { id:            'Vendor',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Vendor',
+                 position:      20,
+                 targetElement: '_item'} ]
+
   @UI: { lineItem:       [ { position: 10,
                              importance: #HIGH } ],
          identification: [ { position: 10 } ],
          selectionField: [ { position: 10 } ] }
-    CostTypeId;
+  CostTypeId;
   @UI: { lineItem:       [ { position: 20,
                              importance: #HIGH } ],
          identification: [ { position: 20 } ],
          selectionField: [ { position: 20 } ] }
-    Weekvalue;
+  Weekvalue;
   @UI: { lineItem:       [ { position: 30,
                               importance: #MEDIUM } ],
          identification: [ { position: 30 } ] }
-    Curryearvalue; 
+  Curryearvalue;
   @UI: { lineItem:       [ { position: 40,
                               importance: #MEDIUM } ],
          identification: [ { position: 40 } ] }
-    Lastyearvalue;
-    @UI.hidden: true
-    CurrencyCode;
-    
+  Lastyearvalue;
+  @UI.hidden: true
+  CurrencyCode;
+
 }
